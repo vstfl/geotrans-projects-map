@@ -20,13 +20,15 @@ npm run dev -- --open
 ```
 
 ## Build for GitHub Pages
-Generate the static site. The output is written to the `/build` directory, which is the folder that GitHub Pages should publish from (`Settings → Pages → Deploy from branch → main /build`).
+Generate the static site and copy it to `/docs`, which is the folder GitHub Pages can publish from (`Settings → Pages → Deploy from branch → main /docs`).
 
 ```sh
-npm run build
+npm run build:docs
 ```
 
-After running the build command, commit the updated `build` directory alongside your source changes and push to `main` to refresh the published site.
+`npm run build` still writes to `/build` only. Run `npm run sync:docs` if you just need to re-copy the latest build artifacts without rebuilding.
+
+After running the build command, commit the updated `build` and `docs` directories alongside your source changes and push to `main` to refresh the published site.
 
 ## Deployment Notes
 - Asset paths automatically switch to `/geotrans-projects-map` in production builds so the site loads correctly from `https://vstfl.github.io/geotrans-projects-map/` and inside an iframe.
