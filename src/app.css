@@ -1,0 +1,21 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	color-scheme: light;
+}
+
+html,
+body,
+#svelte {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: theme('fontFamily.sans');
+	background-color: theme('colors.gray.100');
+}
