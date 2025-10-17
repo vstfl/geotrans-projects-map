@@ -33,4 +33,4 @@ After running the build command, commit the updated `build` and `docs` directori
 ## Deployment Notes
 - Asset paths automatically switch to `/geotrans-projects-map` in production builds so the site loads correctly from `https://vstfl.github.io/geotrans-projects-map/` and inside an iframe.
 - Leaflet is only initialized in the browser. Static builds prerender cleanly without server-side access to the DOM.
-- The current map is an OpenStreetMap basemap centered on `[20, 0]` with global zoom. Add markers or GeoJSON layers later as data becomes available.
+- Provincial/state boundary polygons (Alberta, Iowa, Maine) are bundled as GeoJSON in `static/data` so they display immediately without extra network dependencies. Convert new shapefiles with `ogr2ogr` and drop them into that directory to add more layers.
